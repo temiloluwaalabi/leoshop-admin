@@ -30,14 +30,14 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
   const graphRevenue = await getGraphRevenue(params.storeId);
   return (
     <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 p-6">
+      <div className="flex-1 space-y-4 p-6">
         <Headings 
           title="Dashboard"
           description="Overview of your store"
         />
         <Separator />
-        <div className="grid gap-4 grid-cols-3">
-          <Card>
+        <div className="md:grid gap-4 md:grid-cols-12 flex flex-col">
+          <Card className="lg:col-span-4 md:col-span-6">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Total Revenue
@@ -50,7 +50,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="lg:col-span-4 md:col-span-6">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Sales
@@ -63,7 +63,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="lg:col-span-4 md:col-span-12">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Products In Stock
